@@ -1,4 +1,6 @@
+import { useQuery } from "@apollo/client";
 import CustomerSummary from "./CustomerSummary";
+import { GET_CUSTOMERS } from "@/graphql/queries";
 import styles from "../styles/CustomerList.module.css";
 
 interface Customer {
@@ -11,8 +13,16 @@ interface CustomerListProps {
   customers: Customer[];
 }
 
-const CustomerList = ({ customers }: CustomerListProps) => {
-  const summaries = customers.map((customer, i: number) => (
+const CustomerList = () => {
+  const { loading, error, data } = useQuery(GET_CUSTOMERS);
+
+  if (loading) return <div>Loading</div>;
+  if (error) return <div>Error fetching customer data: {error.message}</div>;
+  if (!data) return <div>No data available</div>;
+
+  const { Customers } = data;
+
+  const summaries = Customers.map((customer: Customer, i: number) => (
     <tr key={i}>
       <CustomerSummary {...customer} />
     </tr>

@@ -1,6 +1,6 @@
 export const typeDefs = `#graphql
   type Customer {
-    id: Int,
+    id: String,
     username: String,
     name: String,
     address: String,
@@ -17,15 +17,13 @@ export const typeDefs = `#graphql
 
   type TransactionsPerAccount {
     accountId: Int,
-    transactionCount: Int,
     transactions: [Transaction]
-
   }
 
   type Transaction {
     date: Float,
     amount: Int,
-    transactionCode: String,
+    code: String,
     symbol: String,
     price: Float,
     total: Float
@@ -40,8 +38,8 @@ export const typeDefs = `#graphql
 
   type Query {
     Customers: [Customer],
-    Customer(username: String!): Customer,
-    TransactionsPerAccount(accountId: Int!): [TransactionsPerAccount],
+    Customer(id: String!): Customer,
+    TransactionsPerAccount(accountId: Int!): [Transaction],
   }
 `;
 
