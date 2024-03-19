@@ -43,6 +43,6 @@ export const typeDefs = `#graphql
     Customer(username: String!): Customer,
     TransactionsPerAccount(accountId: Int!): [TransactionsPerAccount],
   }
-`; 
+`;
 
 export default typeDefs;
