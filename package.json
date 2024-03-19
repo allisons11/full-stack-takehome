@@ -1,0 +1,14 @@
+{
+  "name": "full-stack-takehome",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "cd client && npm run dev & cd server && npm run dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "prettier": "^3.2.5"
+  }
+}
