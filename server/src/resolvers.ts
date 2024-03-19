@@ -7,7 +7,7 @@ const transactions = db.collection("transactions");
 export const resolvers = {
   Query: {
     Customers: async (_) => {
-      console.log('is this running ??????')
+      console.log("is this running ??????");
       try {
         const allCustomers = await customers.find({}).toArray();
         return allCustomers;

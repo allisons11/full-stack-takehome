@@ -10,17 +10,17 @@ import CustomerList from "../components/CustomerList";
 const inter = Inter({ subsets: ["latin"] });
 
 interface Customer {
-  username: string,
-  name: string,
-  address: string
+  username: string;
+  name: string;
+  address: string;
 }
 
 interface CustomerListProps {
-  customers: Customer[]
+  customers: Customer[];
 }
 
 export default function Home({ customers }: CustomerListProps) {
-  console.log('customers', customers)
+  console.log("customers", customers);
   return (
     <>
       <Head>

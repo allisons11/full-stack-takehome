@@ -1,20 +1,20 @@
 import CustomerSummary from "./CustomerSummary";
-import styles from '../styles/CustomerList.module.css';
+import styles from "../styles/CustomerList.module.css";
 
 interface Customer {
-  username: string,
-  name: string,
-  address: string
+  username: string;
+  name: string;
+  address: string;
 }
 
 interface CustomerListProps {
-  customers: Customer[]
+  customers: Customer[];
 }
 
 const CustomerList = ({ customers }: CustomerListProps) => {
   const summaries = customers.map((customer, i: number) => (
     <tr key={i}>
-     <CustomerSummary {...customer} />
+      <CustomerSummary {...customer} />
     </tr>
   ));
 
@@ -28,9 +28,7 @@ const CustomerList = ({ customers }: CustomerListProps) => {
             <th className={styles.headerCell}>Address</th>
           </tr>
         </thead>
-        <tbody>
-            { summaries }
-        </tbody>
+        <tbody>{summaries}</tbody>
       </table>
     </div>
   );
