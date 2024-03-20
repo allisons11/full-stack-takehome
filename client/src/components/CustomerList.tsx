@@ -9,10 +9,6 @@ interface Customer {
   address: string;
 }
 
-interface CustomerListProps {
-  customers: Customer[];
-}
-
 const CustomerList = () => {
   const { loading, error, data } = useQuery(GET_CUSTOMERS);
 

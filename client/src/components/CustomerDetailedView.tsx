@@ -2,6 +2,7 @@ import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import Account from "./Account";
 import { GET_CUSTOMER_INFO } from "@/graphql/queries";
+import styles from "../styles/CustomerDetailedView.module.css";
 
 interface Tier {
   tier: String;
@@ -40,13 +41,20 @@ const CustomerDetailedView = () => {
   );
 
   return (
-    <main>
-      <div>{name}</div>
-      <div>{username}</div>
-      <div>Email: {email}</div>
-      <div>Address: {address}</div>
-      <div>{customerTiers}</div>
-      <div>Accounts: {accountCards}</div>
+    <main className={styles.mainContainer}>
+      <div className={styles.personalInfo}>
+        <h1>{name}</h1>
+        <div>{username}</div>
+        <br></br>
+        <div>Email: {email}</div>
+        <div>Address: {address}</div>
+        <div>Birth date: </div>
+      </div>
+      <div className={styles.tierDisplay}>
+        <h2>Member Tiers</h2>
+        {customerTiers}
+      </div>
+      <div className={styles.accountsDisplay}>Accounts: {accountCards}</div>
     </main>
   );
 };

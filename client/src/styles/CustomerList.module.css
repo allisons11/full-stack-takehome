@@ -9,12 +9,6 @@
   max-width: 800px;
 }
 
-.tableCell {
-  border: 1px solid #ddd;
-  padding: 8px;
-  text-align: left;
-}
-
 .headerCell {
   background-color: #f2f2f2;
 }

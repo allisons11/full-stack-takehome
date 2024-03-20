@@ -1,16 +1,13 @@
 import { ObjectId } from "mongodb";
-import { client } from "./db/connection.js";
+import { client } from "./db/connection.ts";
 
-const db = client.db("sample_analytics");
-const customers = db.collection("customers");
-const transactions = db.collection("transactions");
-
-export const resolvers = {
+const resolvers = {
   Query: {
     Customers: async (_) => {
       try {
+        const db = client.db("sample_analytics");
+        const customers = db.collection("customers");
         const allCustomers = await customers.find({}).toArray();
-        console.log(allCustomers, "all");
         return allCustomers;
       } catch (error) {
         throw new Error(`Could not fetch customers: ${error.message}`);
@@ -18,6 +15,8 @@ export const resolvers = {
     },
     Customer: async (_, { id }) => {
       try {
+        const db = client.db("sample_analytics");
+        const customers = db.collection("customers");
         const customer = await customers.findOne({ _id: new ObjectId(id) });
         if (!customer) {
           throw new Error(`No customer found with the id ${id}`);
@@ -29,6 +28,8 @@ export const resolvers = {
     },
     TransactionsPerAccount: async (_, { accountId }) => {
       try {
+        const db = client.db("sample_analytics");
+        const transactions = db.collection("transactions");
         const transactionsPerAccount = await transactions.findOne({
           account_id: accountId,
         });
@@ -50,3 +51,5 @@ export const resolvers = {
     code: ({ transaction_code }) => transaction_code,
   },
 };
+
+export default resolvers;

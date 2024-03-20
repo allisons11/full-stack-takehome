@@ -11,7 +11,7 @@ export const client = new MongoClient(uri, {
   },
 });
 
-async function run() {
+export async function run() {
   try {
     await client.connect();
     await client.db("admin").command({ ping: 1 });
@@ -22,4 +22,3 @@ async function run() {
     await client.close();
   }
 }
-run().catch(console.dir);

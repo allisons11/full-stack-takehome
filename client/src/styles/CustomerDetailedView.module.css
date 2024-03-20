@@ -1,0 +1,31 @@
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sectionHeader {
+  font-size: 30px;
+}
+
+.personalInfo {
+  border: 1px solid #000000;
+  padding: 20px;
+}
+
+.tierDisplay {
+  border: 1px solid #000000;
+  padding: 20px;
+}
+
+.accountsDisplay {
+  border: 1px solid #000000;
+  padding: 20px;
+}
+
+.fullName {
+  font-size: 20px;
+}
+
+.username {
+}

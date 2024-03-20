@@ -1,15 +1,32 @@
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
-import { typeDefs } from "./typeDefs.js";
-import { resolvers } from "./resolvers.js";
+import { run, client } from "./db/connection.js";
+import typeDefs from "./typeDefs.js";
+import resolvers from "./resolvers.js";
+
+const port = 4000;
 
 const server = new ApolloServer({
   typeDefs,
   resolvers,
 });
 
+// start apollo server
 const { url } = await startStandaloneServer(server, {
-  listen: { port: 4000 },
+  listen: { port },
 });
 
 console.log(`Server running on ${url}`);
+
+// start mongodb connection
+run().catch(console.dir);
+
+// close server & mongodb client on termination
+process.on("SIGINT", async () => {
+  console.log("\nReceived SIGINT. Stopping Apollo Server...");
+  await server.stop();
+  console.log("Apollo Server stopped.");
+  await client.close();
+  console.log("MongoDB client closed.");
+  process.exit(0);
+});
