@@ -22,9 +22,15 @@ const Transaction = ({
     <section className={styles.transaction}>
       <p className={styles.transactionLine}>Date: {readableDate}</p>
       <p className={styles.transactionLine}>Type: {code}</p>
-      <p className={styles.transactionLine}>Amount: {amount.toFixed(2).toString()}</p>
-      <p className={styles.transactionLine}>Price: {price.toFixed(2).toString()}</p>
-      <p className={styles.transactionLine}>Total: {total.toFixed(2).toString()}</p>
+      <p className={styles.transactionLine}>
+        Amount: {amount.toFixed(2).toString()}
+      </p>
+      <p className={styles.transactionLine}>
+        Price: {price.toFixed(2).toString()}
+      </p>
+      <p className={styles.transactionLine}>
+        Total: {total.toFixed(2).toString()}
+      </p>
     </section>
   );
 };
