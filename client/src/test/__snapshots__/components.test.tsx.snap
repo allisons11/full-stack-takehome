@@ -16,23 +16,33 @@ exports[`component snapshot tests Transaction 1`] = `
 <section
   class="transaction"
 >
-  <p>
+  <p
+    class="transactionLine"
+  >
     Date: 
     Thu, 15 Jan 1970 08:15:09 GMT
   </p>
-  <p>
+  <p
+    class="transactionLine"
+  >
     Type: 
     buy
   </p>
-  <p>
+  <p
+    class="transactionLine"
+  >
     Amount: 
     200.23
   </p>
-  <p>
+  <p
+    class="transactionLine"
+  >
     Price: 
     9.09
   </p>
-  <p>
+  <p
+    class="transactionLine"
+  >
     Total: 
     99999.00
   </p>

@@ -52,7 +52,9 @@ const Account = ({ accountId }: AccountProps) => {
       </header>
       <section>
         <h4>Transaction History</h4>
-        {transactions}
+        <div className={styles.transactionList}>
+          {transactions}
+        </div>
       </section>
     </section>
   );

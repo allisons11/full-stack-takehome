@@ -3,3 +3,9 @@
   padding: 10px;
   margin-bottom: 5px;
 }
+
+.transactionList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}

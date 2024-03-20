@@ -1,9 +1,22 @@
 .transaction {
+  display: flex;
+  flex: 0 1 calc(33.33% - 20px); 
+  max-width: calc(33.33% - 20px);
   border: 1px solid #000000;
   padding: 10px;
-  margin-bottom: 5px;
+  margin: 5px;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .transactionLine {
-  margin: 5px;
+  flex-basis: 100%; 
+  max-width: 100%; 
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  margin: 3px; 
+  padding: 0;
+  font-size: 15px;
 }
