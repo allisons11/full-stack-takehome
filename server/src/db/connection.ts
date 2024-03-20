@@ -1,7 +1,9 @@
 import { MongoClient, ServerApiVersion } from "mongodb";
 
 const uri =
-  "mongodb+srv://compass_home_test:GWrOXoHlDedBphNX@recruitment.fagsjqo.mongodb.net/sample_analytics?retryWrites=true&w=majority.";
+  process.env.NODE_ENV === "production"
+    ? process.env.MONGO_URI_PROD
+    : process.env.MONGO_URI_DEV;
 
 export const client = new MongoClient(uri, {
   serverApi: {

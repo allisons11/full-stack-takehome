@@ -1,0 +1,10 @@
+{
+  "env": {
+    "PORT": 4000,
+    "NODE_ENV": "development",
+    "MONGO_URI_DEV": "mongodb+srv://compass_home_test:GWrOXoHlDedBphNX@recruitment.fagsjqo.mongodb.net/sample_analytics?retryWrites=true&w=majority."
+  },
+  "watch": ["src"],
+  "ext": "ts",
+  "exec": "dotenv --exec ts-node src/index.ts"
+}

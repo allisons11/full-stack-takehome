@@ -4,6 +4,7 @@ import { GET_CUSTOMERS } from "@/graphql/queries";
 import styles from "../styles/CustomerList.module.css";
 
 interface Customer {
+  id: string;
   username: string;
   name: string;
   address: string;

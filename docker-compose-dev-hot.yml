@@ -7,7 +7,7 @@ services:
     build:
       context: ./client
       dockerfile: Dockerfile
-    image: allisons11/mm-prod
+    image: allisons11/cbd-client
     container_name: cdb-client-dev
     ports:
       - "3000:3000"
@@ -22,7 +22,7 @@ services:
     build:
       context: ./server
       dockerfile: Dockerfile
-    image: allisons11/mm-prod
+    image: allisons11/cdb-client
     container_name: cdb-server-dev
     ports:
       - "4000:4000"

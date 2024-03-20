@@ -30,11 +30,17 @@ const CustomerDetailedView = () => {
 
   const customerTiers = tierAndDetails.map(
     ({ tier, benefits, active }: Tier, i: number) => {
+      const benefitsList = benefits.map((benefit, i: number) => {
+        return <li>{benefit}</li>;
+      });
       return (
-        <div key={i}>
-          <div>{tier}</div>
-          <div>Active: {active.toString()}</div>
-          <div>Benefits: {benefits}</div>
+        <div className={styles.tierCard} key={i}>
+          <section>{tier}</section>
+          <section>Active: {active.toString()}</section>
+          <section className={styles.benefitCard}>
+            <header className={styles.benefitHeader}>Benefits:</header>
+            <ul className={styles.benefitsItems}>{benefitsList}</ul>
+          </section>
         </div>
       );
     },
@@ -54,7 +60,11 @@ const CustomerDetailedView = () => {
         <h2>Member Tiers</h2>
         {customerTiers}
       </div>
-      <div className={styles.accountsDisplay}>Accounts: {accountCards}</div>
+      <div className={styles.accountsDisplay}>
+        <h2>Accounts:</h2>
+        <br />
+        {accountCards}
+      </div>
     </main>
   );
 };

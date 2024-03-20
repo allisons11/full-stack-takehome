@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`component snapshot tests Account 1`] = `
+<div>
+  Loading
+</div>
+`;
+
+exports[`component snapshot tests CustomerList 1`] = `
+<div>
+  Loading
+</div>
+`;
+
+exports[`component snapshot tests Transaction 1`] = `
+<div
+  class="transaction"
+>
+  <div>
+    Date: 
+    Thu, 15 Jan 1970 08:15:09 GMT
+  </div>
+  <div>
+    Type: 
+    buy
+  </div>
+  <div>
+    Amount: 
+    200.234234
+  </div>
+  <div>
+    Price: 
+    9.0924234
+  </div>
+  <div>
+    Total: 
+    99999
+  </div>
+</div>
+`;

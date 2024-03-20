@@ -1,10 +1,13 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 import { ApolloServer } from "@apollo/server";
 import { startStandaloneServer } from "@apollo/server/standalone";
 import { run, client } from "./db/connection.js";
 import typeDefs from "./typeDefs.js";
 import resolvers from "./resolvers.js";
 
-const port = 4000;
+const port = Number(process.env.PORT);
 
 const server = new ApolloServer({
   typeDefs,

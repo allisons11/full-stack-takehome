@@ -27,5 +27,16 @@
   font-size: 20px;
 }
 
-.username {
+.tierCard {
+  border: 1px solid #000000;
+  margin: 2px;
+  max-width: 300px;
+}
+
+.benefitHeader {
+  margin-bottom: 5px;
+}
+
+.benefitsItems {
+  margin: 2px;
 }

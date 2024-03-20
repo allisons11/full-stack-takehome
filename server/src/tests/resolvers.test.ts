@@ -38,8 +38,6 @@ let server;
 
 beforeAll(async () => {
   // start db connection
-  // using the provided uri for now
-  // ideally, would be a separate mongodb in docker w/ test data
   await run().catch(console.dir);
   // start the server before running tests
   server = new ApolloServer({ typeDefs, resolvers });

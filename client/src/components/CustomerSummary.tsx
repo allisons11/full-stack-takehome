@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import styles from "../styles/CustomerSummary.module.css";
 
-interface CustomerSummaryProps {
+export interface CustomerSummaryProps {
   name: string;
   username: string;
   address: string;

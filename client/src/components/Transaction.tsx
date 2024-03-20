@@ -1,4 +1,6 @@
-interface TransactionProps {
+import styles from "../styles/Transaction.module.css";
+
+export interface TransactionProps {
   code: String;
   date: Number;
   amount: Number;
@@ -13,10 +15,9 @@ const Transaction = ({
   price,
   total,
 }: TransactionProps) => {
-  console.log(code, date, amount, price, total, "props");
   const readableDate = new Date(Number(date)).toUTCString();
   return (
-    <div>
+    <div className={styles.transaction}>
       <div>Date: {readableDate}</div>
       <div>Type: {code}</div>
       <div>Amount: {amount.toString()}</div>

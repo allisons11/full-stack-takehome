@@ -1,12 +1,13 @@
 import { useQuery } from "@apollo/client";
 import Transaction from "./Transaction";
-import { GET_TRANSACTIONS } from "@/graphql/queries";
+import { GET_TRANSACTIONS } from "../graphql/queries";
+import styles from "../styles/Account.module.css";
 
-interface AccountProps {
+export interface AccountProps {
   accountId: Number;
 }
 
-interface Transaction {
+export interface Transaction {
   code: String;
   date: Number;
   amount: Number;
@@ -41,10 +42,15 @@ const Account = ({ accountId }: AccountProps) => {
       );
     });
   return (
-    <div>
-      <div>Account # {accountId.toString()}</div>
-      <div>{transactions}</div>
-    </div>
+    <article className={styles.accountCard}>
+      <header>
+        <h3>Account # {accountId.toString()}</h3>
+      </header>
+      <section>
+        <h4>Transaction History</h4>
+        {transactions}
+      </section>
+    </article>
   );
 };
 
