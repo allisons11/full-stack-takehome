@@ -13,28 +13,28 @@ exports[`component snapshot tests CustomerList 1`] = `
 `;
 
 exports[`component snapshot tests Transaction 1`] = `
-<div
+<section
   class="transaction"
 >
-  <div>
+  <p>
     Date: 
     Thu, 15 Jan 1970 08:15:09 GMT
-  </div>
-  <div>
+  </p>
+  <p>
     Type: 
     buy
-  </div>
-  <div>
+  </p>
+  <p>
     Amount: 
-    200.234234
-  </div>
-  <div>
+    200.23
+  </p>
+  <p>
     Price: 
-    9.0924234
-  </div>
-  <div>
+    9.09
+  </p>
+  <p>
     Total: 
-    99999
-  </div>
-</div>
+    99999.00
+  </p>
+</section>
 `;

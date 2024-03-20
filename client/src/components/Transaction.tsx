@@ -1,5 +1,6 @@
 import styles from "../styles/Transaction.module.css";
 
+// types
 export interface TransactionProps {
   code: String;
   date: Number;
@@ -15,15 +16,16 @@ const Transaction = ({
   price,
   total,
 }: TransactionProps) => {
+  // convert mongodb date format to readable string
   const readableDate = new Date(Number(date)).toUTCString();
   return (
-    <div className={styles.transaction}>
-      <div>Date: {readableDate}</div>
-      <div>Type: {code}</div>
-      <div>Amount: {amount.toString()}</div>
-      <div>Price: {price.toString()}</div>
-      <div>Total: {total.toString()}</div>
-    </div>
+    <section className={styles.transaction}>
+      <p>Date: {readableDate}</p>
+      <p>Type: {code}</p>
+      <p>Amount: {amount.toFixed(2).toString()}</p>
+      <p>Price: {price.toFixed(2).toString()}</p>
+      <p>Total: {total.toFixed(2).toString()}</p>
+    </section>
   );
 };
 

@@ -1,9 +1,10 @@
 import { useQuery } from "@apollo/client";
-import CustomerSummary from "./CustomerSummary";
 import { GET_CUSTOMERS } from "@/graphql/queries";
+import CustomerSummary from "./CustomerSummary";
 import styles from "../styles/CustomerList.module.css";
 
-interface Customer {
+// types
+export interface Customer {
   id: string;
   username: string;
   name: string;
@@ -19,25 +20,31 @@ const CustomerList = () => {
 
   const { Customers } = data;
 
-  const summaries = Customers.map((customer: Customer, i: number) => (
-    <tr key={i}>
-      <CustomerSummary {...customer} />
-    </tr>
-  ));
+  // create CustomerSummary components sorted alphabetically by name
+  const summaries = [...Customers]
+    .sort((a: Customer, b: Customer) => {
+      return a.name.localeCompare(b.name);
+    })
+    .map((customer: Customer, i: number) => (
+      <tr key={i}>
+        <CustomerSummary {...customer} />
+      </tr>
+    ));
 
   return (
-    <div className={styles.customerList}>
+    <article className={styles.customerList}>
       <table className={styles.table}>
         <thead>
           <tr>
             <th className={styles.headerCell}>Name</th>
             <th className={styles.headerCell}>Username</th>
             <th className={styles.headerCell}>Address</th>
+            <th className={styles.headerCell}></th>
           </tr>
         </thead>
         <tbody>{summaries}</tbody>
       </table>
-    </div>
+    </article>
   );
 };
 

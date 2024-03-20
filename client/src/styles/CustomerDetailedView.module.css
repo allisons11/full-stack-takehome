@@ -2,6 +2,16 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  max-width: 800px;
+  margin-left: 5%;
+}
+
+.label {
+  font-weight: bold;
+}
+
+.infoBlurb {
+  margin-bottom: 8px;
 }
 
 .sectionHeader {
@@ -11,11 +21,16 @@
 .personalInfo {
   border: 1px solid #000000;
   padding: 20px;
+  max-width: 500px;
 }
 
 .tierDisplay {
   border: 1px solid #000000;
   padding: 20px;
+}
+
+.tierCards {
+  display: flex;
 }
 
 .accountsDisplay {
@@ -29,14 +44,19 @@
 
 .tierCard {
   border: 1px solid #000000;
-  margin: 2px;
+  padding: 5px;
+  margin: 8px;
   max-width: 300px;
 }
 
-.benefitHeader {
+.benefitText {
   margin-bottom: 5px;
 }
 
 .benefitsItems {
   margin: 2px;
+}
+
+.username {
+  font-size: 20px;
 }

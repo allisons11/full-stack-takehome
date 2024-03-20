@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "dev": "cd client && npm run dev & cd server && npm run dev",
-    "build": "cd client && npm run build & cd server && npx tsc",
     "test": "cd client && jest & cd server && jest & npx prettier --check .",
     "lint": "npx prettier . --write",
     "docker-dev:hot": "docker-compose -f docker-compose-dev-hot.yml up",
