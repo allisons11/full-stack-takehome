@@ -1,4 +1,4 @@
-# Start from a base image of Node 16
+# Start from a base image of Node 18
 FROM node:18-alpine
 
 # Set working directory for containerized application
