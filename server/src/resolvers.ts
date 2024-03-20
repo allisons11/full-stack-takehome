@@ -1,12 +1,16 @@
 import { ObjectId } from "mongodb";
 import { client } from "./db/connection.ts";
 
+const getDBCollection = (collection: string) => {
+  const db = client.db("sample_analytics");
+  return db.collection(collection);
+};
+
 const resolvers = {
   Query: {
     Customers: async (_) => {
       try {
-        const db = client.db("sample_analytics");
-        const customers = db.collection("customers");
+        const customers = getDBCollection("customers");
         const allCustomers = await customers.find({}).toArray();
         return allCustomers;
       } catch (error) {
@@ -15,8 +19,7 @@ const resolvers = {
     },
     Customer: async (_, { id }) => {
       try {
-        const db = client.db("sample_analytics");
-        const customers = db.collection("customers");
+        const customers = getDBCollection("customers");
         const customer = await customers.findOne({ _id: new ObjectId(id) });
         if (!customer) {
           throw new Error(`No customer found with the id ${id}`);
@@ -28,8 +31,7 @@ const resolvers = {
     },
     TransactionsPerAccount: async (_, { accountId }) => {
       try {
-        const db = client.db("sample_analytics");
-        const transactions = db.collection("transactions");
+        const transactions = getDBCollection("transactions");
         const transactionsPerAccount = await transactions.findOne({
           account_id: accountId,
         });

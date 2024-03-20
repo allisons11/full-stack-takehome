@@ -42,7 +42,7 @@ beforeAll(async () => {
   // start the server before running tests
   server = new ApolloServer({ typeDefs, resolvers });
   await startStandaloneServer(server, {
-    listen: { port: 4000 },
+    listen: { port: Number(process.env.PORT) },
   });
 });
 
@@ -88,7 +88,7 @@ describe("Resolver tests", () => {
     }
   });
 
-  test("Customer", async () => {
+  test("Customer Query", async () => {
     const query = `
     query {
       Customer(id: "5ca4bbcea2dd94ee58162ad9") {
@@ -134,7 +134,7 @@ describe("Resolver tests", () => {
     }
   });
 
-  test("TransactionsPerAccount", async () => {
+  test("TransactionsPerAccount Query", async () => {
     const query = `
     query {
       TransactionsPerAccount(accountId: 774823) {

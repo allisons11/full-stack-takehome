@@ -11,6 +11,10 @@
     "docker-build-dev": "docker-compose -f docker-compose-dev-hot.yml up --build",
     "install-deps": "npm install & cd client && npm install & cd server && npm install"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/allisons11/full-stack-takehome.git"
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
