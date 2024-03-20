@@ -22,7 +22,7 @@ services:
     build:
       context: ./server
       dockerfile: Dockerfile
-    image: allisons11/cdb-client
+    image: allisons11/cdb-server
     container_name: cdb-server-dev
     ports:
       - "4000:4000"
