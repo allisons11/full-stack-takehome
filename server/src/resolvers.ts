@@ -45,9 +45,7 @@ const resolvers = {
   },
   Customer: {
     id: ({ _id }) => _id,
-    tierAndDetails: ({ tier_and_details }) => {
-      return Object.values(tier_and_details);
-    },
+    tierAndDetails: ({ tier_and_details }) => Object.values(tier_and_details),
   },
   Transaction: {
     code: ({ transaction_code }) => transaction_code,
