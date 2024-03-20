@@ -103,10 +103,9 @@ describe("Resolver tests", () => {
               benefits
               active
           }
+        }
       }
-  }
-  
-  `;
+    `;
 
     try {
       const response = await axios.post("http://localhost:4000", { query });
@@ -145,8 +144,7 @@ describe("Resolver tests", () => {
         price
         total
       }
-  }
-  
+    }
   `;
 
     try {
