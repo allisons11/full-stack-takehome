@@ -37,12 +37,13 @@ interface Tier {
 let server;
 
 beforeAll(async () => {
+  const port = process.env.port ? Number(process.env.PORT) : 4000;
   // start db connection
   await run().catch(console.dir);
   // start the server before running tests
   server = new ApolloServer({ typeDefs, resolvers });
   await startStandaloneServer(server, {
-    listen: { port: Number(process.env.PORT) },
+    listen: { port },
   });
 });
 

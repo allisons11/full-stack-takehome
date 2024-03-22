@@ -7,7 +7,7 @@ import { run, client } from "./db/connection.js";
 import typeDefs from "./typeDefs.js";
 import resolvers from "./resolvers.js";
 
-const port = Number(process.env.PORT);
+const port = process.env.port ? Number(process.env.PORT) : 4000;
 
 const server = new ApolloServer({
   typeDefs,
